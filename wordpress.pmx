@@ -3,6 +3,18 @@ name: Wordpress
 description: Wordpress template
 keywords: wordpress, mysql
 recommended: true
+documentation: |
+  This is my super cool heading
+  =============================
+  
+  Here comes my bullet list
+  * First
+  * Second
+  * Third
+  
+  Here is some regular content.
+  
+  More regular content.
 authors: 
 - 'ctl-labs-futuretech@savvis.com'
 icon: http://panamax.ca.tier3.io/template_logos/wordpress.png
