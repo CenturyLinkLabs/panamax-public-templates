@@ -8,9 +8,10 @@ documentation: |
   =============================
   
   Here comes my bullet list
-  * First
-  * Second
-  * Third
+  
+  - First
+  - Second
+  - Third
   
   Here is some regular content.
   
