@@ -8,7 +8,7 @@ authors:
 icon: http://panamax.ca.tier3.io/template_logos/wordpress.png
 images:
 - name: DB
-  repository: mysql
+  repository: panamax/panamax-docker-mysql
   tag: latest
   description: MySQL
   environment:
@@ -19,7 +19,7 @@ images:
   category: DB Tier
   icon: http://panamax.ca.tier3.io/service_icons/icon_service_db_grey.png
 - name: WP
-  repository: wordpress
+  repository: panamax/panamax-docker-wordpress
   tag: latest
   description: Wordpress
   links:
