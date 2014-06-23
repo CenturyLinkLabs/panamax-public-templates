@@ -20,7 +20,7 @@ authors:
 - 'ctl-labs-futuretech@savvis.com'
 icon: http://panamax.ca.tier3.io/template_logos/wordpress.png
 images:
-- name: DB
+- name: DB_1
   repository: panamax/panamax-docker-mysql
   tag: latest
   description: MySQL
@@ -38,7 +38,7 @@ images:
   environment:
     DB_PASSWORD: pass@word01
   links:
-  - service: DB
+  - service: DB_1
     alias: mysql
   ports:
   - host_port: 8080
