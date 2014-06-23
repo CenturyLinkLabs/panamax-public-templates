@@ -35,6 +35,8 @@ images:
   repository: panamax/panamax-docker-wordpress
   tag: latest
   description: Wordpress
+  environment:
+    DB_PASSWORD: pass@word01
   links:
   - service: DB
     alias: mysql
