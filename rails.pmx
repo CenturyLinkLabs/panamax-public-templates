@@ -3,7 +3,7 @@
   "description":"This is a Rails app template",
   "keywords":null,
   "recommended":true,
-  "icon":"http://panamax.ca.tier3.io/template_logos/default.png",
+  "type":"rails",
   "images":[
     {
       "category":null,
@@ -11,7 +11,7 @@
       "repository":"dharmamike/dc-pgsql",
       "tag":"latest",
       "description":"PostgreSQL",
-      "icon":"http://panamax.ca.tier3.io/service_icons/icon_service_db_grey.png",
+      "type":"postgres",
       "ports":[
         {
           "host_port":5432,
@@ -25,7 +25,7 @@
       "repository":"dharmamike/dc-rails",
       "tag":"latest",
       "description":"welcome to rails",
-      "icon":"http://panamax.ca.tier3.io/service_icons/icon_service_docker_grey.png",
+      "type":"rails",
       "ports":[
         {
           "host_port":8088,

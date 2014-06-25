@@ -18,7 +18,7 @@ documentation: |
   More regular content.
 authors: 
 - 'ctl-labs-futuretech@savvis.com'
-icon: http://panamax.ca.tier3.io/template_logos/wordpress.png
+type: wordpress
 images:
 - name: DB
   repository: panamax/panamax-docker-mysql
@@ -30,7 +30,7 @@ images:
   - host_port: 3306
     container_port: 3306
   category: DB Tier
-  icon: http://panamax.ca.tier3.io/service_icons/icon_service_db_grey.png
+  type: mysql
 - name: WP
   repository: panamax/panamax-docker-wordpress
   tag: latest
@@ -44,4 +44,4 @@ images:
   - host_port: 8080
     container_port: 80
   category: Web Tier
-  icon: http://panamax.ca.tier3.io/service_icons/icon_service_wp_grey.png
+  type: wordpress
