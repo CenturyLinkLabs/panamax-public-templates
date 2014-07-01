@@ -8,8 +8,7 @@
     {
       "category":null,
       "name":"DB_2",
-      "repository":"dharmamike/dc-pgsql",
-      "tag":"latest",
+      "source":"dharmamike/dc-pgsql",
       "description":"PostgreSQL",
       "type":"postgres",
       "ports":[
@@ -22,8 +21,7 @@
     {
       "category":null,
       "name":"APP",
-      "repository":"dharmamike/dc-rails",
-      "tag":"latest",
+      "source":"dharmamike/dc-rails",
       "description":"welcome to rails",
       "type":"rails",
       "ports":[

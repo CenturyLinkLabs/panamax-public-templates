@@ -21,8 +21,7 @@ authors:
 type: wordpress
 images:
 - name: DB
-  repository: panamax/panamax-docker-mysql
-  tag: latest
+  source: panamax/panamax-docker-mysql
   description: MySQL
   environment:
     - variable: MYSQL_ROOT_PASSWORD
@@ -33,8 +32,7 @@ images:
   category: DB Tier
   type: mysql
 - name: WP
-  repository: panamax/panamax-docker-wordpress
-  tag: latest
+  source: panamax/panamax-docker-wordpress
   description: Wordpress
   environment:
     - variable: DB_PASSWORD
