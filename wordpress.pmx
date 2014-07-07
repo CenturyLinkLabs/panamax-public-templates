@@ -6,15 +6,15 @@ recommended: true
 documentation: |
   This is my super cool heading
   =============================
-  
+
   Here comes my bullet list
-  
+
   - First
   - Second
   - Third
-  
+
   Here is some regular content.
-  
+
   More regular content.
 authors: 
 - 'ctl-labs-futuretech@savvis.com'
@@ -25,7 +25,8 @@ images:
   tag: latest
   description: MySQL
   environment:
-    MYSQL_ROOT_PASSWORD: pass@word01
+    - variable: MYSQL_ROOT_PASSWORD
+      value: pass@word01
   ports:
   - host_port: 3306
     container_port: 3306
@@ -36,7 +37,8 @@ images:
   tag: latest
   description: Wordpress
   environment:
-    DB_PASSWORD: pass@word01
+    - variable: DB_PASSWORD
+      value: pass@word01
   links:
   - service: DB
     alias: DB_1
