@@ -1,0 +1,43 @@
+---
+name: Drupal 7.28 with MySQL
+description: Drupal 7.28 with mysql
+keywords: drupal, mysql
+recommended: 
+type: Drupal
+documentation: Adjust the values of the environmental variables on the mysql service
+  to match your needs. When configuring Drupal via the UI, use these values. For database
+  address, use the mysql ALIAS value from your link entry on the drupal service. No
+  port is needed.
+images:
+- category: DB Tier
+  name: panamax_panamax-docker-mysql_1
+  source: panamax/panamax-docker-mysql:latest
+  description: 
+  type: Default
+  expose: []
+  ports: []
+  links: []
+  environment:
+  - variable: MYSQL_ROOT_PASSWORD
+    value: pass@word
+  - variable: MYSQL_DATABASE
+    value: drupal
+  - variable: MYSQL_USER
+    value: user
+  - variable: MYSQL_PASSWORD
+    value: pass@word01
+  volumes: []
+- category: Web Tier
+  name: panamax_panamax-docker-drupal_1
+  source: panamax/panamax-docker-drupal:7.28
+  description: 
+  type: Default
+  expose: []
+  ports:
+  - host_port: '8080'
+    container_port: '80'
+  links:
+  - service: panamax_panamax-docker-mysql_1
+    alias: MYSQLDB
+  environment: []
+  volumes: []
