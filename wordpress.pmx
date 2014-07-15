@@ -1,21 +1,9 @@
 
-name: Wordpress
-description: Wordpress template
+name: Wordpress with MySQL
+description: Wordpress container linked to a MySQL container
 keywords: wordpress, mysql
 recommended: true
-documentation: |
-  This is my super cool heading
-  =============================
-
-  Here comes my bullet list
-
-  - First
-  - Second
-  - Third
-
-  Here is some regular content.
-
-  More regular content.
+documentation: 
 authors: 
 - 'ctl-labs-futuretech@savvis.com'
 type: wordpress
