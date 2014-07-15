@@ -1,0 +1,46 @@
+---
+name: Drupal 7.28 with PostgreSQL 9.3
+description: Drupal 7.28 with PostgreSQL 9.3
+keywords: drupal, postgres, postgresql
+recommended: 
+type: Drupal
+documentation: Adjust the values of the environmental variables on the mysql service
+  to match your needs. When configuring Drupal via the UI, use these values. For database
+  address, use the postgres ALIAS value from your link entry on the drupal service.
+  No port is needed. Be sure to select **PostgreSQL** as your database type when filling
+  in the Drupal setup.
+images:
+- id: 8
+  category: DB
+  name: paintedfox_postgresql
+  source: paintedfox/postgresql:latest
+  description: 
+  type: Default
+  expose: []
+  ports: []
+  links: []
+  environment:
+  - variable: USER
+    value: my_user
+  - variable: PASS
+    value: pass@word01
+  - variable: DB
+    value: drupal
+  volumes: []
+  command: []
+- id: 9
+  category: Web
+  name: panamax_panamax-docker-drupal_7.28
+  source: panamax/panamax-docker-drupal:7.28
+  description: 
+  type: Default
+  expose: []
+  ports:
+  - host_port: '8080'
+    container_port: '80'
+  links:
+  - service: paintedfox_postgresql
+    alias: POSTGRES
+  environment: []
+  volumes: []
+  command: []
