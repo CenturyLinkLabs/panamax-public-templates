@@ -1,0 +1,33 @@
+---
+name: GitLab Single node
+description: GitLab environment on a single container for testing based on image sameersbn/gitlab
+keywords: gitlab, mysql, nginx
+recommended: 
+type: Default
+documentation: "## System requirements\r\n- recommend 2GB of RAM for your Host and
+  2 Cores for best performance\r\n\r\n## Running\r\n\r\n__NOTE__: Please allow a couple
+  of minutes for the GitLab application to start.\r\n\r\nPoint your browser to `http://localhost:10080`
+  and login using the default username and password:\r\n\r\n* username: admin@local.host\r\n*
+  password: 5iveL!fe\r\n\r\nYou should now have the GitLab application up and ready
+  for testing."
+images:
+- id: 18
+  category: GitLab
+  name: sameersbn_gitlab_latest
+  source: sameersbn/gitlab:latest
+  description: 
+  type: Default
+  expose: []
+  ports:
+  - host_port: '10022'
+    container_port: '22'
+  - host_port: '10080'
+    container_port: '80'
+  links: []
+  environment:
+  - variable: GITLAB_PORT
+    value: '10080'
+  - variable: GITLAB_SSH_PORT
+    value: '10022'
+  volumes: []
+  command: []
