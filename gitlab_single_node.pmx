@@ -11,8 +11,7 @@ documentation: "## System requirements\r\n- recommend 2GB of RAM for your Host a
   password: 5iveL!fe\r\n\r\nYou should now have the GitLab application up and ready
   for testing."
 images:
-- id: 18
-  category: GitLab
+- category: GitLab
   name: sameersbn_gitlab_latest
   source: sameersbn/gitlab:latest
   description: 
