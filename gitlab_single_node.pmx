@@ -30,4 +30,3 @@ images:
   - variable: GITLAB_SSH_PORT
     value: '10022'
   volumes: []
-  command: []

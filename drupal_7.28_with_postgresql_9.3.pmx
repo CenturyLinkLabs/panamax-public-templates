@@ -27,7 +27,6 @@ images:
   - variable: DB
     value: drupal
   volumes: []
-  command: []
 - id: 9
   category: Web
   name: panamax_panamax-docker-drupal_7.28
@@ -43,4 +42,3 @@ images:
     alias: POSTGRES
   environment: []
   volumes: []
-  command: []

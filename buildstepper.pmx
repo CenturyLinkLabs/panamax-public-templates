@@ -25,4 +25,4 @@ images:
     value:
     required: true
   volumes: []
-  command: ['/start', 'web']
+  command: '/start web'
