@@ -1,0 +1,54 @@
+---
+name: GitLab with PostgreSQL + Redis
+description: This template is Gitlab with separate containers for PostgreSQL and Redis.
+  This is based on an image from sameersbn / gitlab .
+keywords: gitlab, postgresql, redis, nginx, openssh
+type: Default
+documentation: '## System requirements\r\n- recommend 2GB of RAM for your Host and
+  2 Cores for best performance\r\n\r\n## Running\r\n\r\n__NOTE__: Please allow a few
+  of minutes for the GitLab application to start. Watch the journal output.\r\n\r\nForward your host to port 10800 in VirtualBox to see the GUI. Point to `http://localhost:host_port`
+  and login using the default username and password:\r\n\r\n* username: admin@local.host\r\n*
+  password: 5iveL!fe\r\n\r\n'
+images:
+- name: paintedfox_postgresql_latest
+  source: paintedfox/postgresql:latest
+  category: DB
+  type: Default
+  environment:
+  - variable: DB
+    value: gitlab
+  - variable: USER
+    value: gitlabuser
+  - variable: PASS
+    value: password
+- name: sameersbn_redis
+  source: sameersbn/redis:latest
+  category: DB
+  type: Default
+- name: centurylinklabs_gitlab
+  source: centurylinklabs/gitlab:latest
+  category: Web
+  type: Default
+  ports:
+  - host_port: '10080'
+    container_port: '80'
+    proto: TCP
+  - host_port: '10022'
+    container_port: '22'
+    proto: TCP
+  links:
+  - service: paintedfox_postgresql_latest
+    alias: postgresql
+  - service: sameersbn_redis
+    alias: redisio
+  environment:
+  - variable: DB_NAME
+    value: gitlab
+  - variable: DB_USER
+    value: gitlabuser
+  - variable: DB_PASS
+    value: password
+  - variable: GITLAB_PORT
+    value: '10080'
+  - variable: GITLAB_SSH_PORT
+    value: '10022'
