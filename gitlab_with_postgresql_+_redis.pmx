@@ -10,7 +10,7 @@ documentation: '## System requirements\r\n- recommend 2GB of RAM for your Host a
   and login using the default username and password:\r\n\r\n* username: admin@local.host\r\n*
   password: 5iveL!fe\r\n\r\n'
 images:
-- name: paintedfox_postgresql_latest
+- name: PostgreSQL
   source: paintedfox/postgresql:latest
   category: DB
   type: Default
@@ -21,11 +21,11 @@ images:
     value: gitlabuser
   - variable: PASS
     value: password
-- name: sameersbn_redis
+- name: Redis
   source: sameersbn/redis:latest
   category: DB
   type: Default
-- name: centurylinklabs_gitlab
+- name: GitLab
   source: centurylinklabs/gitlab:latest
   category: Web
   type: Default
