@@ -10,8 +10,7 @@ documentation: Adjust the values of the environmental variables on the mysql ser
   No port is needed. Be sure to select **PostgreSQL** as your database type when filling
   in the Drupal setup.
 images:
-- id: 8
-  category: DB
+- category: DB
   name: paintedfox_postgresql
   source: paintedfox/postgresql:latest
   description: 
@@ -27,8 +26,7 @@ images:
   - variable: DB
     value: drupal
   volumes: []
-- id: 9
-  category: Web
+- category: Web
   name: panamax_panamax-docker-drupal_7.28
   source: panamax/panamax-docker-drupal:7.28
   description: 

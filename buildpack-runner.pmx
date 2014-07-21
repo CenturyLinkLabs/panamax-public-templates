@@ -1,17 +1,17 @@
 
-name: Buildstepper
+name: buildpack-runner
 description: a template for running your GitHub repo code via Heroku buildpacks
 keywords: buildstep, heroku, buildpack, git, github
 recommended: false
 type: Default
 documentation: |
-  CenturyLinkLabs/buildstepper
+  CenturyLinkLabs/buildpack-runner
   ============================
   It's your GitHub repo code running in-container via Panamax.
 images:
 - category: Web Tier
   name: MyWebApp
-  source: centurylinklabs/buildstepper:latest
+  source: centurylinklabs/buildpack-runner:latest
   description: My Web App running in-container
   type: Default
   expose: ['80']
