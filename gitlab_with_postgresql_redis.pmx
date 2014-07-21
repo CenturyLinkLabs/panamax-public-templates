@@ -4,11 +4,29 @@ description: This template is Gitlab with separate containers for PostgreSQL and
   This is based on an image from sameersbn / gitlab .
 keywords: gitlab, postgresql, redis, nginx, openssh
 type: Default
-documentation: '## System requirements\r\n- recommend 2GB of RAM for your Host and
-  2 Cores for best performance\r\n\r\n## Running\r\n\r\n__NOTE__: Please allow a few
-  of minutes for the GitLab application to start. Watch the journal output.\r\n\r\nForward your host to port 10800 in VirtualBox to see the GUI. Point to `http://localhost:host_port`
-  and login using the default username and password:\r\n\r\n* username: admin@local.host\r\n*
-  password: 5iveL!fe\r\n\r\n'
+documentation: |
+  GitLab with PostgrSQL + Redis
+  =======================
+  ## System requirements
+  Recommend 2GB of RAM for your Host and 2 Cores for best performance
+
+  ##Port Forwarding
+  To view the GUI after launching the template, map your local host machine to port _10080_. If using Virtual Box, use the following command in your terminal to create the port forwarding rule:
+
+  **VboxManage controlvm panamax-vm natpf1 gitlab,tcp,,8997,,10080**
+
+  Where, gitlab is the friendly name of the rule, tcp is the protocol. Replace port _8997_ with the local free port of your choice. 
+
+  After you run this command locally, browse to **http://localhost:8997** to see the GUI, as per the example.
+
+  ## Running
+  __NOTE__: Please allow a few minutes for the GitLab service to start. Watch the journal output for the  message that it is complete.
+
+  Login using the default username and password:
+
+  username: **admin@local.host**
+
+  password: **5iveL!fe**
 images:
 - name: PostgreSQL
   source: paintedfox/postgresql:latest
