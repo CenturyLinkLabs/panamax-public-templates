@@ -1,0 +1,39 @@
+---
+name: Tiny Tiny RSS - PostgreSQL
+description: "Runs Tiny Tiny RSS feed reader. Keep your feed history to yourself and
+  access your RSS and atom feeds from everywhere. You can access it through an easy
+  to use webinterface on your desktop, your mobile browser or using one of available
+  apps. This is a docker image that eases setup.\r\n\r\nAbout Tiny Tiny RSS\r\n\r\nTiny
+  Tiny RSS is an open source web-based news feed (RSS/Atom) reader and aggregator,
+  designed to allow you to read news from any location, while feeling as close to
+  a real desktop application as possible.\r\n"
+keywords: ttrss, tiny, RSS
+type: Default
+documentation: "Tiny Tiny RSS - PostgreSQL\r\n==================\r\n\r\nExpose PORT
+  in Localhost VirtualBox\r\n------\r\n\r\nMake sure to expose Port 8000 in Virtualbox
+  (or another port by changing the PORT in Service configuration page)\r\n\r\nLogin\r\n------\r\nThe
+  default login credentials are:\r\n\r\nUsername: admin\r\nPassword: password\r\n\r\nDatabase
+  configuration\r\n------\r\n\r\nWhenever your run ttrss, it will check your database
+  setup. It assumes the following default configuration, which can be changed by passing
+  the following additional arguments:\r\n\r\n-e DB_NAME=ttrss\r\n-e DB_USER=ttrss\r\n-e
+  DB_PASS=ttrss\r\n\r\nDatabase superuser\r\n-------\r\nWhen you run ttrss, it will
+  check your database setup. If it can not connect using the above configuration,
+  it will automatically try to create a new database and user.\r\n\r\nFor this to
+  work, it will need a superuser account that is permitted to create a new database
+  and user. It assumes the following default configuration, which can be changed by
+  passing the following additional arguments:\r\n\r\n-e DB_ENV_USER=docker\r\n-e DB_ENV_PASS=docker\r\n"
+images:
+- name: nornagon_postgres_latest
+  source: nornagon/postgres:latest
+  category: Database
+  type: Default
+- name: clue_ttrss
+  source: clue/ttrss:latest
+  category: Tiny RSS
+  type: Default
+  ports:
+  - host_port: '8000'
+    container_port: '80'
+  links:
+  - service: nornagon_postgres_latest
+    alias: db
