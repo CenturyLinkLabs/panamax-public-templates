@@ -23,11 +23,11 @@ documentation: "Tiny Tiny RSS - PostgreSQL\r\n==================\r\n\r\nExpose P
   and user. It assumes the following default configuration, which can be changed by
   passing the following additional arguments:\r\n\r\n-e DB_ENV_USER=docker\r\n-e DB_ENV_PASS=docker\r\n"
 images:
-- name: nornagon_postgres_latest
+- name: PostgreSQL
   source: nornagon/postgres:latest
   category: Database
   type: Default
-- name: clue_ttrss
+- name: ttrss - NGIX,PHP
   source: clue/ttrss:latest
   category: Tiny RSS
   type: Default
@@ -35,5 +35,5 @@ images:
   - host_port: '8000'
     container_port: '80'
   links:
-  - service: nornagon_postgres_latest
+  - service: PostgreSQL
     alias: db
