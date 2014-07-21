@@ -37,9 +37,9 @@ images:
     container_port: '22'
     proto: TCP
   links:
-  - service: paintedfox_postgresql_latest
+  - service: PostgreSQL
     alias: postgresql
-  - service: sameersbn_redis
+  - service: Redis
     alias: redisio
   environment:
   - variable: DB_NAME
