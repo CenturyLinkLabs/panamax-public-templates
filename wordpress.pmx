@@ -3,7 +3,20 @@ name: Wordpress with MySQL
 description: Wordpress container linked to a MySQL container
 keywords: wordpress, mysql
 recommended: true
-documentation: 
+documentation: |
+  Wordpress with MySQL
+   ============================
+  The alias for the link between Wordpress and MySQL needs to be `DB_1`. If this is changed, the template will not work.
+
+  Also, the password can be changed, but the environmental variables need to be changed on both services.
+
+  To view the GUI after launching the template, map your local machine host to port 8080. If using Virtual Box, use the following command in your terminal to create the port forwarding rule:
+
+  `VboxManage controlvm panamax-vm natpf1 "wordpress,tcp,,8997,,8080" `
+
+  Where, wordpress is the friendly name of the rule, tcp is the protocol. Replace port `8997` with the local free port of your choice. If you change the port bindings on the Wordpress service, `8080` will need to be changed to match that too.
+
+  After you run this command locally, browse to `http://localhost:8997` to see the GUI, as per the example.
 authors: 
 - 'ctl-labs-futuretech@savvis.com'
 type: wordpress
