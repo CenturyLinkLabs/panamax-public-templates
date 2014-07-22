@@ -4,10 +4,23 @@ description: Drupal 7.28 with mysql
 keywords: drupal, mysql
 recommended: 
 type: Drupal
-documentation: Adjust the values of the environmental variables on the mysql service
-  to match your needs. When configuring Drupal via the UI, use these values. For database
-  address, use the mysql ALIAS value from your link entry on the drupal service. No
-  port is needed.
+documentation: |
+  Drupal 7.28 with MySQL
+  =========
+  
+  ##Instructions
+  Adjust the values of the environmental variables on the MySQL service to match your needs. When configuring Drupal via the UI, use these values. 
+
+  For Database Address, use the MySQL service ALIAS value from your link entry on the Drupal service. This value is mapped to the IP of the MySQL container. No port is needed. Be sure to select **MySQL** as your database type when filling in the Drupal setup.
+
+  ##Port Forwarding
+  To view the GUI after launching the template, map your local host machine to port _8080_. If using Virtual Box, use the following command in your terminal to create the port forwarding rule:
+
+  `VboxManage controlvm panamax-vm natpf1 gitlab,tcp,,8997,,8080`
+
+  Where, gitlab is the friendly name of the rule, tcp is the protocol. Replace port _8997_ with the local free port of your choice. 
+
+  After you run this command locally, browse to **http://localhost:8997** to see the GUI, as per the example.
 images:
 - category: DB Tier
   name: panamax_panamax-docker-mysql_1
