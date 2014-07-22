@@ -9,7 +9,7 @@ documentation: |
   =========
   
   ##Instructions
-  Adjust the values of the environmental variables on the MySQL service to match your needs. When configuring Drupal via the UI, use these values. 
+  Adjust the values of the environmental variables on the PostgreSQL service to match your needs. When configuring Drupal via the UI, use these values. 
 
   For Database Address, use the PostgreSQL service ALIAS value from your link entry on the Drupal service. This value is mapped to the IP of the PostGreSQL container.No port is needed. Be sure to select **PostgreSQL** as your database type when filling in the Drupal setup.
 
