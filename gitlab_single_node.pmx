@@ -5,7 +5,7 @@ keywords: gitlab, mysql, nginx
 recommended: 
 type: Default
 documentation: |
-  GitLab with PostgrSQL + Redis
+  GitLab - Single node
   =======================
   
   ##System requirements
