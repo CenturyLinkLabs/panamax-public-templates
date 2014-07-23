@@ -31,7 +31,7 @@ images:
   environment: []
   volumes: []
 - category: 
-  name: tutum_grafana_1
+  name: Grafana
   source: tutum/grafana
   description: 
   type: Default
