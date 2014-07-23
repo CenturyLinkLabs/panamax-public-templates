@@ -1,0 +1,24 @@
+
+name: StackEdit 3.1.14
+description: a template for running StackEdit v3.1.14
+keywords: stackedit, markdown, pagedown
+recommended: false
+type: Default
+documentation: |
+  CenturyLinkLabs/stackedit
+  =========================
+  StackEdit is a full-featured, open-source Markdown editor based on PageDown,
+  the Markdown library used by Stack Overflow and the other Stack Exchange sites.
+
+  When run within Panamax with default settings, the application should be
+  available in the browser at http://localhost:8080/
+images:
+- name: StackEdit
+  source: centurylinklabs/stackedit:3.1.14
+  description: My StackEdit container
+  type: Default
+  ports:
+  - host_port: '80'
+    container_port: '3000'
+  links: []
+  volumes: []
