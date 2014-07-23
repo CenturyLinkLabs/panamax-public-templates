@@ -4,7 +4,7 @@ description: MediaWiki 1.21.2 using NGINX with a MYSQL Database Container
 keywords: MedaiaWiki, Wiki
 type: Default
 documentation: "MediaWiki 1.21.2 - NGINX, MySQL\n=======================\n
-\nThis installs a fixed version of [MediaWiki](https://www.mediawiki.org/wiki/MediaWiki)
+  This installs a fixed version of [MediaWiki](https://www.mediawiki.org/wiki/MediaWiki)
   1.21.2\n\n##Port Forwarding\nIn order to view your wiki after running you will need
   to setup a port forwarding rule.  To view the GUI after launching the template,
   map your local host machine to port _8088_. If using Virtual Box, use the following
