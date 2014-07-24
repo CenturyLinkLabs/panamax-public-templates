@@ -1,37 +1,37 @@
 ---
-name: MediaWiki 1.21 - NGINX with MySQL
-description: MediaWiki 1.21.2 using NGINX with a MYSQL Database Container
-keywords: MedaiaWiki, Wiki
+name: MediaWiki 1.21 - NGINX and MySQL
+description: MediaWiki 1.21.1 with NGINX and MySQL
+keywords: MediaWiki, Wiki
 type: Default
-documentation: "MediaWiki 1.21.2 - NGINX, MySQL\n=======================\n
-  This installs a fixed version of [MediaWiki](https://www.mediawiki.org/wiki/MediaWiki)
-  1.21.2\n\n##Port Forwarding\nIn order to view your wiki after running you will need
-  to setup a port forwarding rule.  To view the GUI after launching the template,
-  map your local host machine to port _8088_. If using Virtual Box, use the following
-  command in your terminal to create the port forwarding rule:\n\n`VboxManage controlvm
-  panamax-vm natpf1 gitlab,tcp,,8997,,8088`\n\n  Where, gitlab is the friendly name
-  of the rule, tcp is the protocol. Replace port _8997_ with the local free port of
-  your choice. \n\n  After you run this command locally, browse to **http://localhost:8997**
-  to see the GUI, as per the example.\n  \n##Template Configruation\nThe template
-  sets the root password of the mysql database to \n\n**MediaWiki.123**\n\nYou will
-  need to utilize this password when you run the MediaWiki configuration process.
-  \ (this can also be changed by changing the env variable: MYSQL_ROOT_PASSWORD in
-  the mysql container)\n\nThe template also sets up a volume on the host and is defaulted
-  to:\n\n`/var/mediawiki : /data`\n\nThis Volume will be listed in the Volumes section
-  in the MediaWiki Service Detail in Panamax.\n\n__NOTE__ The container datapath for
-  the volume must be set to **/data** , you can choose to change the host path from
-  **/var/mediawiki** if you would like. \n\n##Running - MediaWiki setup\nOnce the
-  containers are running you should be able to access by goingto: **http://localhost:8997**
-  (depending on the port forwarding rule you setup). \n\nComplete the MediaWiki setup,
-  make sure to utilize in the MySQL Settings section: \n\nDatabase host: **mysql**
-  \ (this is the link alias)\n\nDatabase password for root: **MediaWiki.123**\n\nWhen
-  complete you need to take the _LocalSettings.php_ and put it in your host volume.\n\nOpen
+documentation: "MediaWiki 1.21.2 - NGINX, MySQL\n=======================\n\nThis installs
+  a fixed version of [MediaWiki](https://www.mediawiki.org/wiki/MediaWiki) 1.21.2\n\n##Port
+  Forwarding\nIn order to view your wiki after running you will need to setup a port
+  forwarding rule.  To view the GUI after launching the template, map your local host
+  machine to port _8088_. If using Virtual Box, use the following command in your
+  terminal to create the port forwarding rule:\n\n`VboxManage controlvm panamax-vm
+  natpf1 gitlab,tcp,,8997,,8088`\n\n  Where, gitlab is the friendly name of the rule,
+  tcp is the protocol. Replace port _8997_ with the local free port of your choice.
+  \n\n  After you run this command locally, browse to **http://localhost:8997** to
+  see the GUI, as per the example.\n  \n##Template Configruation\nThe template sets
+  the root password of the mysql database to \n\n**MediaWiki.123**\n\nYou will need
+  to utilize this password when you run the MediaWiki configuration process.  (this
+  can also be changed by changing the env variable: MYSQL_ROOT_PASSWORD in the mysql
+  container)\n\nThe template also sets up a volume on the host and is defaulted to:\n\n`/var/mediawiki
+  : /data`\n\nThis Volume will be listed in the Volumes section in the MediaWiki Service
+  Detail in Panamax.\n\n__NOTE__ The container datapath for the volume must be set
+  to **/data** , you can choose to change the host path from **/var/mediawiki** if
+  you would like. \n\n##Running - MediaWiki setup\nOnce the containers are running
+  you should be able to access by goingto: **http://localhost:8997** (depending on
+  the port forwarding rule you setup). \n\nComplete the MediaWiki setup, make sure
+  to utilize in the MySQL Settings section: \n\nDatabase host: **mysql**  (this is
+  the link alias)\n\nDatabase password for root: **MediaWiki.123**\n\nWhen complete
+  you need to take the _LocalSettings.php_ and put it in your host volume.\n\nOpen
   a terminal:\n\n`panamax ssh` then navigage to your host volume path you setup earlier
   `/var/mediawiki` \n\n"
 images:
-- name: MediaWiki
+- name: nickstenning_mediawiki_latest
   source: nickstenning/mediawiki:latest
-  category: Web Server - Media Wiki
+  category: Web Server - MediaWiki
   type: Default
   ports:
   - host_port: '8088'
@@ -43,7 +43,7 @@ images:
   volumes:
   - host_path: "/var/mediawiki"
     container_path: "/data"
-- name: Panamax-MySQL
+- name: panamax_panamax-docker-mysql
   source: panamax/panamax-docker-mysql:latest
   category: Database
   type: Default
