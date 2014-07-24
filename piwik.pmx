@@ -1,7 +1,7 @@
 
 name: Piwik
 description: a template for running Piwik open source analytics platform
-keywords: piwik, analytics
+keywords: piwik, analytics, all
 recommended: false
 type: Default
 documentation: |
