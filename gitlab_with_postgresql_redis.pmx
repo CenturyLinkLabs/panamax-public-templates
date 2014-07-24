@@ -2,7 +2,7 @@
 name: GitLab with PostgreSQL and Redis
 description: This template is Gitlab with separate containers for PostgreSQL and Redis.
   This is based on an image from sameersbn / gitlab .
-keywords: gitlab, postgresql, redis, nginx, openssh
+keywords: gitlab, postgresql, redis, nginx, openssh, all
 type: Default
 documentation: |
   GitLab with PostgrSQL + Redis
