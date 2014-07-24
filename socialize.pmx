@@ -1,0 +1,53 @@
+---
+name: Socialize!
+description: IPO'ing in Q3 of 2014
+keywords: ''
+type: Default
+documentation: |-
+  will pull down Alex's github activity log
+
+  - modify the API_PORT in the ui container to point to the publicly exposed API port (may require Vagrantfile config)*
+  - modify the GITHUB_FEED_URL in the etl container to point to the desired github atom feed
+images:
+- name: redis_latest
+  source: redis:latest
+  category: WORKERS
+  type: Default
+- name: postgres
+  source: postgres:latest
+  category: API
+  type: Default
+- name: api
+  source: centurylinklabs/socialize-api:latest
+  category: API
+  type: Default
+  ports:
+  - host_port: '3001'
+    container_port: '3000'
+    proto: TCP
+  links:
+  - service: postgres
+    alias: postgres
+- name: etl
+  source: centurylinklabs/socialize-etl:latest
+  category: WORKERS
+  type: Default
+  links:
+  - service: redis_latest
+    alias: redis
+  - service: api
+    alias: api
+  environment:
+  - variable: GITHUB_FEED_URL
+    value: https://github.com/alexwelch.atom
+- name: ui
+  source: centurylinklabs/socialize-ui:latest
+  category: UI
+  type: Default
+  ports:
+  - host_port: '81'
+    container_port: '80'
+    proto: TCP
+  environment:
+  - variable: API_PORT
+    value: '3001'
