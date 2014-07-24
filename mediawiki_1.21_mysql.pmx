@@ -1,6 +1,6 @@
 ---
 name: MediaWiki 1.21 - NGINX and MySQL
-description: MediaWiki 1.21.1 with NGINX and MySQL
+description: MediaWiki 1.21.2 with NGINX and MySQL
 keywords: MediaWiki, Wiki
 type: Default
 documentation: "MediaWiki 1.21.2 - NGINX, MySQL\n=======================\n\nThis installs
