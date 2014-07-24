@@ -1,0 +1,34 @@
+---
+name: AWS CLI - wetty
+description: Amazon Web Services - CLI (Version 1.0.0) - using wetty Terminal in Chrome
+  Browser
+keywords: AWS, AWSCLI, CLI, all
+type: Ubuntu
+documentation: "AWS CLI 1.0 - wetty terminal\n=======================\n\nInstalls
+  a [wetty terminal](https://github.com/krishnasrinivas/wetty) with [Amazon Web Services
+  - CLI](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html)\n\nInteract
+  with AWS CLI via your browser terminal.\n\n##Port Forwarding\nIn order to view your
+  wiki after running you will need to setup a port forwarding rule.  To view the GUI
+  after launching the template, map your local host machine to port _8088_. If using
+  Virtual Box, use the following command in your terminal to create the port forwarding
+  rule:\n\n`VboxManage controlvm panamax-vm natpf1 gitlab,tcp,,8997,,8088`\n\n  Where,
+  gitlab is the friendly name of the rule, tcp is the protocol. Replace port _8997_
+  with the local free port of your choice. \n\n  After you run this command locally,
+  browse to **http://localhost:8997** to see the GUI, as per the example. Default
+  username and password are: \n\nUsername:**term**\n\nPassword:**term**\n\n  \n##Template
+  Configruation\nSet your AWS Credentials as Environment Variables in the service
+  details in Panamax to get them injected in or run: \n\n `aws configure` \n\nin your
+  wetty terminal. \n\n \n"
+images:
+- name: centurylinklabs_wetty-aws-cli_latest
+  source: centurylinklabs/wetty-aws-cli:latest
+  type: Default
+  ports:
+  - host_port: '8088'
+    container_port: '3000'
+    proto: TCP
+  environment:
+  - variable: AWS_ACCESS_KEY_ID
+    value: ''
+  - variable: AWS_SECRET_ACCESS_KEY
+    value: ''
