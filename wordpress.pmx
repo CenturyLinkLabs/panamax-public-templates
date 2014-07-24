@@ -1,7 +1,7 @@
 
 name: Wordpress with MySQL
 description: Wordpress container linked to a MySQL container
-keywords: wordpress, mysql
+keywords: wordpress, mysql, all
 recommended: true
 documentation: |
   Wordpress with MySQL
