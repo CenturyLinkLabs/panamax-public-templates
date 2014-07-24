@@ -20,8 +20,8 @@ documentation: "AWS CLI 1.0 - wetty terminal\n=======================\n\nInstall
   details in Panamax to get them injected in or run: \n\n `aws configure` \n\nin your
   wetty terminal. \n\n \n"
 images:
-- name: centurylinklabs_wetty-aws-cli_latest
-  source: centurylinklabs/wetty-aws-cli:latest
+- name: AWS_CLI_wetty
+  source: centurylinklabs/aws-cli-wetty:latest
   type: Default
   ports:
   - host_port: '8088'
