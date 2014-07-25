@@ -13,7 +13,7 @@ documentation: |
   Interact with AWS CLI via your browser terminal.
 
   ##Port Forwarding
-  In order to view your wiki after running you will need to setup a port forwarding rule. To view the GUI after launching the template, map your local host machine to port _8088_. If using Virtual Box, use the following command in your terminal to create the port forwarding rule:
+  In order to view your application after running you will need to setup a port forwarding rule. To view the GUI after launching the template, map your local host machine to port _8088_. If using Virtual Box, use the following command in your terminal to create the port forwarding rule:
 
   `VboxManage controlvm panamax-vm natpf1 gitlab,tcp,,8997,,8088`
 
