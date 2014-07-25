@@ -1,6 +1,7 @@
 ---
 name: OpenStack CLIs with wetty
-description: ''
+description: 'OpenStack CLIs - using wetty Terminal in Chrome
+  Browser'
 keywords: openstack, cli, wetty, all
 type: Ubuntu
 documentation: "OpenStack CLIs with wetty\n=======================\nInstalls a [wetty
