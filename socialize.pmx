@@ -10,6 +10,17 @@ documentation: |-
   - modify the GITHUB_FEED_URL in the etl container to point to the desired github atom feed
 
   ![diagram](http://www.gliffy.com/go/publish/image/5993606/M.png)
+  
+  ## Errbit
+
+  In order to wire the Rails API application up to Errbit, you first need to log into Errbit
+  and generate a new API key. Browse to the Errbit app and log-in with username `errbit@errbit.example.com` and password
+  `password`. Create a new app with the "Add a New App" button and then take note of the API key that is generated when
+  submitting the form.
+
+  Once you've generated the API key you'll need to edit the API service and add an environment variable named `ERRBIT_API_KEY`
+  with the API key as the value. This will allow the API service to connect to the Errbit API and pass-along any errors that
+  are generated.
 images:
 - name: redis_latest
   source: redis:latest
