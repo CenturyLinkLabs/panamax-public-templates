@@ -30,6 +30,8 @@ images:
   links:
   - service: postgres
     alias: postgres
+  - service: errbit
+    alias: errbit
 - name: etl
   source: centurylinklabs/socialize-etl:latest
   category: WORKERS
@@ -53,3 +55,21 @@ images:
   environment:
   - variable: API_PORT
     value: '3001'
+- name: errbit
+  source: centurylinklabs/errbit:0.3.0-dev
+  category: SUPPORT
+  type: Default
+  ports:
+  - host_port: '8890'
+    container_port: '3000'
+    proto: TCP
+  links:
+  - service: mongo
+    alias: mongodb
+- name: mongo
+  source: mongo:2.6
+  category: SUPPORT
+  type: Default
+  volumes:
+  - host_path: "/data/db"
+    container_path: "/data/db"
