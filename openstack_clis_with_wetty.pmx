@@ -1,0 +1,37 @@
+---
+name: OpenStack CLIs with wetty
+description: ''
+keywords: openstack, cli, wetty, all
+type: Ubuntu
+documentation: "OpenStack CLIs with wetty\n=======================\nInstalls a [wetty
+  terminal](https://github.com/krishnasrinivas/wetty) with all the latest OpenStack
+  CLIs.\n  \nInteract with OpenStack CLIs via your browser terminal - Only **Chrome**
+  is supported.\n\n##Setup\nFill in your OpenStack specific creds in the service details
+  section.\n\n##Port Forwarding\nIn order to view your application after running you
+  will need to setup a port forwarding rule. To view the GUI after launching the template,
+  map your local host machine to port _8088_. If using Virtual Box, use the following
+  command in your terminal to create the port forwarding rule:\n\n  `VboxManage controlvm
+  panamax-vm natpf1 rule1,tcp,,8997,,8088`\n\nWhere, rule1 is the friendly name of
+  the rule, tcp is the protocol. Replace port _8997_ with the local free port of your
+  choice. After you run this command locally, browse to **http://localhost:8997**
+  to see the GUI, as per the example. \n\nDefault username and password are:\n\nUsername:**term**\n\nPassword:**term**\n"
+images:
+- name: centurylinklabs_openstack-cli_latest
+  source: centurylinklabs/openstack-cli:latest
+  category: OpenStack_CLIs
+  type: Default
+  ports:
+  - host_port: '8000'
+    container_port: '3000'
+    proto: TCP
+  environment:
+  - variable: OS_AUTH_URL
+    value: ''
+  - variable: OS_REGION_NAME
+    value: ''
+  - variable: OS_TENANT_NAME
+    value: ''
+  - variable: OS_USERNAME
+    value: ''
+  - variable: OS_PASSWORD
+    value: ''
