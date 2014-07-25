@@ -18,7 +18,7 @@ documentation: "OpenStack CLIs with wetty\n=======================\nInstalls a [
   to see the GUI, as per the example. \n\nDefault username and password are:\n\nUsername:**term**\n\nPassword:**term**\n"
 images:
 - name: OpenStack CLIs
-  source: centurylinklabs/openstack-cli:latest
+  source: centurylinklabs/openstack-cli-wetty:latest
   category: CLIs
   type: Default
   ports:
