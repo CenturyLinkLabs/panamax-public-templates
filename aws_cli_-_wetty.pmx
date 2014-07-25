@@ -5,7 +5,7 @@ description: Amazon Web Services - CLI (Version 1.0.0) - using wetty Terminal in
 keywords: AWS, AWSCLI, CLI, all
 type: Ubuntu
 documentation: |
-  WS CLI 1.0 - wetty terminal
+  AWS CLI 1.0 - wetty terminal
   =======================
   Installs a [wetty terminal](https://github.com/krishnasrinivas/wetty) with [Amazon Web Services
   - CLI](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html).
