@@ -16,9 +16,9 @@ documentation: "OpenStack CLIs with wetty\n=======================\nInstalls a [
   choice. After you run this command locally, browse to **http://localhost:8997**
   to see the GUI, as per the example. \n\nDefault username and password are:\n\nUsername:**term**\n\nPassword:**term**\n"
 images:
-- name: centurylinklabs_openstack-cli_latest
+- name: OpenStack CLIs
   source: centurylinklabs/openstack-cli:latest
-  category: OpenStack_CLIs
+  category: CLIs
   type: Default
   ports:
   - host_port: '8000'
