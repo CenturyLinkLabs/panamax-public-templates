@@ -9,7 +9,7 @@ documentation: |-
   - modify the API_PORT in the ui container to point to the publicly exposed API port (may require Vagrantfile config)*
   - modify the GITHUB_FEED_URL in the etl container to point to the desired github atom feed
 
-  ![diagram](http://www.gliffy.com/go/publish/image/5993606/M.png)
+  ![diagram](http://www.gliffy.com/go/publish/image/5993606/L.png)
   
   ## Errbit
 
