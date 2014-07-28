@@ -33,7 +33,7 @@ images:
   category: DB Tier
   type: mysql
 - name: WP
-  source: panamax/panamax-docker-wordpress
+  source: centurylinklabs/wordpress:latest
   description: Wordpress
   environment:
     - variable: DB_PASSWORD
