@@ -23,7 +23,7 @@ documentation: |
   After you run this command locally, browse to **http://localhost:8997** to see the GUI, as per the example.
 images:
 - category: DB
-  name: paintedfox_postgresql
+  name: PostgreSQL
   source: paintedfox/postgresql:latest
   description: 
   type: Default
@@ -39,8 +39,8 @@ images:
     value: drupal
   volumes: []
 - category: Web
-  name: panamax_panamax-docker-drupal_7.28
-  source: panamax/panamax-docker-drupal:7.28
+  name: Drupal_7.28
+  source: centurylinklabs/drupal:7.28
   description: 
   type: Default
   expose: []
@@ -48,7 +48,7 @@ images:
   - host_port: '8080'
     container_port: '80'
   links:
-  - service: paintedfox_postgresql
+  - service: PostgreSQL
     alias: POSTGRES
   environment: []
   volumes: []
