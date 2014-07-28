@@ -42,7 +42,7 @@ images:
   volumes: []
 - category: Web Tier
   name: Drupal 7.28
-  source: panamax/panamax-docker-drupal:7.28
+  source: centurylinklabs/drupal:7.28
   description: 
   type: Default
   expose: []
