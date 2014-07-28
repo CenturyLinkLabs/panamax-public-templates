@@ -1,6 +1,6 @@
 ---
-name: Drupal 7.28 with MySQL
-description: Drupal 7.28 with mysql
+name: Drupal 7.28 with MySQL 5.5
+description: Drupal 7.28 with mysql 5.5
 keywords: drupal, mysql, all
 recommended: 
 type: Drupal
@@ -23,8 +23,8 @@ documentation: |
   After you run this command locally, browse to **http://localhost:8997** to see the GUI, as per the example.
 images:
 - category: DB Tier
-  name: panamax_panamax-docker-mysql_1
-  source: panamax/panamax-docker-mysql:latest
+  name: MySQL 5.5
+  source: centurylinklabs/mysql:5.5
   description: 
   type: Default
   expose: []
@@ -41,7 +41,7 @@ images:
     value: pass@word01
   volumes: []
 - category: Web Tier
-  name: panamax_panamax-docker-drupal_1
+  name: Drupal 7.28
   source: panamax/panamax-docker-drupal:7.28
   description: 
   type: Default
