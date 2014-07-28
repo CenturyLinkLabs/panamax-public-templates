@@ -38,7 +38,7 @@ images:
   environment:
     - variable: DB_PASSWORD
       value: pass@word01
-    - variable: WORDPRESS_DB_NAME
+    - variable: DB_NAME
       value: wordpress
   links:
   - service: DB
