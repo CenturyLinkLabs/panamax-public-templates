@@ -23,7 +23,7 @@ documentation: |
   After you run this command locally, browse to **http://localhost:8997** to see the GUI, as per the example.
 images:
 - category: DB Tier
-  name: MySQL 5.5
+  name: MySQL
   source: centurylinklabs/mysql:5.5
   description: 
   type: Default
@@ -50,7 +50,7 @@ images:
   - host_port: '8080'
     container_port: '80'
   links:
-  - service: panamax_panamax-docker-mysql_1
+  - service: MySQL
     alias: MYSQLDB
   environment: []
   volumes: []
