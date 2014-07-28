@@ -33,7 +33,7 @@ images:
   category: DB Tier
   type: mysql
 - name: WP
-  source: centurylinklabs/wordpress:latest
+  source: centurylinklabs/wordpress:3.9.1
   description: Wordpress
   environment:
     - variable: DB_PASSWORD
