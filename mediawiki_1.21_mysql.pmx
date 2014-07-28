@@ -1,5 +1,5 @@
 ---
-name: MediaWiki 1.21 - NGINX and MySQL
+name: MediaWiki 1.21 - NGINX and MySQL 5.5
 description: MediaWiki 1.21.2 with NGINX and MySQL
 keywords: MediaWiki, Wiki, all
 type: Default
@@ -29,7 +29,7 @@ documentation: "MediaWiki 1.21.2 - NGINX, MySQL\n=======================\n\nThis
   a terminal:\n\n`panamax ssh` then navigage to your host volume path you setup earlier
   `/var/mediawiki` \n\n"
 images:
-- name: nickstenning_mediawiki_latest
+- name: Mediawiki
   source: nickstenning/mediawiki:latest
   category: Web Server - MediaWiki
   type: Default
@@ -38,13 +38,13 @@ images:
     container_port: '80'
     proto: TCP
   links:
-  - service: panamax_panamax-docker-mysql
+  - service: MySQL
     alias: mysql
   volumes:
   - host_path: "/var/mediawiki"
     container_path: "/data"
-- name: panamax_panamax-docker-mysql
-  source: panamax/panamax-docker-mysql:latest
+- name: MySQL
+  source: centurylinklabs/mysql:5.5
   category: Database
   type: Default
   environment:
