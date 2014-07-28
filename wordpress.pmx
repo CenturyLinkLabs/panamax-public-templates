@@ -22,7 +22,7 @@ authors:
 type: wordpress
 images:
 - name: DB
-  source: panamax/panamax-docker-mysql
+  source: centurylinklabs/mysql:5.5
   description: MySQL
   environment:
     - variable: MYSQL_ROOT_PASSWORD
