@@ -1,4 +1,4 @@
-panamax-templates-test
+panamax-public-templates
 ======================
 
-Test repo for hosting Panamax templates
+
