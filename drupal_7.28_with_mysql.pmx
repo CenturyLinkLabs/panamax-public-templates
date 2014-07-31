@@ -24,7 +24,7 @@ documentation: |
 images:
 - category: DB Tier
   name: MySQL
-  source: centurylinklabs/mysql:5.5
+  source: centurylink/mysql:5.5
   description: 
   type: Default
   expose: []
