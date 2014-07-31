@@ -44,7 +44,7 @@ images:
   - host_path: "/var/mediawiki"
     container_path: "/data"
 - name: MySQL
-  source: centurylinklabs/mysql:5.5
+  source: centurylink/mysql:5.5
   category: Database
   type: Default
   environment:
