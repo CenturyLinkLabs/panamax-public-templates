@@ -22,7 +22,7 @@ authors:
 type: wordpress
 images:
 - name: DB
-  source: centurylinklabs/mysql:5.5
+  source: centurylink/mysql:5.5
   description: MySQL
   environment:
     - variable: MYSQL_ROOT_PASSWORD
