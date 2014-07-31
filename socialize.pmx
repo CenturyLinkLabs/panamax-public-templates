@@ -56,7 +56,7 @@ images:
   - variable: GITHUB_FEED_URL
     value: https://github.com/alexwelch.atom
 - name: ui
-  source: centurylinklabs/socialize-ui:latest
+  source: centurylink/socialize-ui:latest
   category: UI
   type: Default
   ports:
