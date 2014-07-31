@@ -11,7 +11,7 @@ documentation: |
 images:
 - category: Web Tier
   name: MyWebApp
-  source: centurylinklabs/buildpack-runner:latest
+  source: centurylink/buildpack-runner:latest
   description: My Web App running in-container
   type: Default
   expose: ['80']
