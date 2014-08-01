@@ -44,7 +44,7 @@ images:
   - service: errbit
     alias: errbit
 - name: etl
-  source: centurylinklabs/socialize-etl:latest
+  source: centurylink/socialize-etl:latest
   category: WORKERS
   type: Default
   links:
