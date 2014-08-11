@@ -45,7 +45,7 @@ images:
   category: DB
   type: Default
 - name: GitLab
-  source: centurylink/gitlab:latest
+  source: centurylink/gitlab:7.1.1
   category: Web
   type: Default
   ports:
