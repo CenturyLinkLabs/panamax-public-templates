@@ -25,7 +25,7 @@ documentation: |
 
   Login using the default username and password:
 
-  username: **admin@local.host**
+  username: **root**
 
   password: **5iveL!fe**
 images:
