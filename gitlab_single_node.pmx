@@ -31,7 +31,7 @@ documentation: |
 images:
 - category: GitLab
   name: sameersbn_gitlab_latest
-  source: sameersbn/gitlab:latest
+  source: sameersbn/gitlab:7.1.1
   description: 
   type: Default
   expose: []
