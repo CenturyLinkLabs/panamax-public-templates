@@ -1,0 +1,45 @@
+---
+name: Rails with PostgreSQL
+description: Rails with PostgreSQL
+keywords: rails, postgresql, all
+recommended: 
+type: Rails
+documentation: |
+  Rails with PostgreSQL
+  =========
+  
+  ##Port Forwarding
+  To view the GUI after launching the template, map your local host machine to port _8080_. If using Virtual Box, use the following command in your terminal to create the port forwarding rule:
+
+  `VboxManage controlvm panamax-vm natpf1 gitlab,tcp,,8997,,8080`
+
+  Where, gitlab is the friendly name of the rule, tcp is the protocol. Replace port _8997_ with the local free port of your choice. 
+
+  After you run this command locally, browse to **http://localhost:8997** to see the GUI, as per the example.
+images:
+- category: DB Tier
+  name: DB_1
+  source: dharmamike/dc-pgsql:latest
+  description: PostgreSQL
+  type: Default
+  expose: []
+  ports: 
+  - host_port: '5432'
+    container_port: '5432'
+  links: []
+  environment: []
+  volumes: []
+- category: Web Tier
+  name: Rails
+  source: dharmamike/dc-rails:latest
+  description: Rails App
+  type: Default
+  expose: []
+  ports:
+  - host_port: '8080'
+    container_port: '3000'
+  links:
+  - service: DB_1
+    alias: DB_1
+  environment: []
+  volumes: []
