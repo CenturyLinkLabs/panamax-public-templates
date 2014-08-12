@@ -1,0 +1,82 @@
+---
+name: GitLab 7.1.1 with PostgreSQL and Redis
+description: This template is Gitlab with separate containers for PostgreSQL and Redis.
+  This is based on an image from sameersbn / gitlab. You need at least 2 GB RAM and 2 Cores to run this template!
+keywords: gitlab, postgresql, redis, nginx, openssh, all
+type: Default
+documentation: |
+  GitLab with PostgrSQL + Redis
+  =======================
+  
+  ##System requirements
+  Recommend 2GB of RAM for your Host and 2 Cores for best performance!
+
+  ##Setup
+  The values of environemental variables for both PostgreSQL and GitLab need to match. The Keys cannot change. Also, the aliases used in the links to Redis and Posatgres from GHitLab cannot change.
+  
+  If the GitLab service does not start up, try the **Rebuild App** function on the application details page to kick start it. Watch the journal for output.
+  
+  ##Port Forwarding
+  To view the GUI after launching the template, map your local host machine to port _10080_. If using Virtual Box, use the following command in your terminal to create the port forwarding rule:
+
+  `VboxManage controlvm panamax-vm natpf1 gitlab,tcp,,8997,,10080`
+
+  Where, gitlab is the friendly name of the rule, tcp is the protocol. Replace port _8997_ with the local free port of your choice. 
+  
+  You can also use [these wiki instructions](https://github.com/CenturyLinkLabs/panamax-ui/wiki/How-To%3A-Port-Forwarding-on-VirtualBox) to setup port forwarding. 
+
+  After setup, browse to **http://localhost:8997** to see the GUI, as per the example.
+
+  ##Running
+  __NOTE__: Please allow a few minutes for the GitLab service to start. Watch the journal output for the message:
+  
+  `docker 127.0.0.1 - - [DATE/TIME] "GET /api/v3/internal/check HTTP/1.1" 200 68 "-" "Ruby"`
+
+  Login using the default username and password:
+
+  username: **root**
+
+  password: **5iveL!fe**
+images:
+- name: GitLab
+  source: centurylink/gitlab:7.1.1
+  category: Web
+  type: Default
+  ports:
+  - host_port: '10080'
+    container_port: '80'
+    proto: TCP
+  - host_port: '10022'
+    container_port: '22'
+    proto: TCP
+  links:
+  - service: PostgreSQL
+    alias: postgresql
+  - service: Redis
+    alias: redisio
+  environment:
+  - variable: GITLAB_PORT
+    value: '10080'
+  - variable: GITLAB_SSH_PORT
+    value: '22'
+  - variable: DB_NAME
+    value: gitlab
+  - variable: DB_USER
+    value: gitlabuser
+  - variable: DB_PASS
+    value: password
+- name: PostgreSQL
+  source: paintedfox/postgresql:latest
+  category: DB
+  type: Default
+  environment:
+  - variable: DB
+    value: gitlab
+  - variable: PASS
+    value: password
+  - variable: USER
+    value: gitlabuser
+- name: Redis
+  source: sameersbn/redis:latest
+  category: DB
+  type: Default
