@@ -1,0 +1,70 @@
+name: Birdwatch - Tweet stream analysis and visualization
+description: "BirdWatch is an open-source reactive web application that consumes the
+  Twitter Streaming API for a selection of terms. It processes those matching tweets
+  in a server side application that is based on Play Framework. The tweets are then
+  stored inside ElasticSearch, where they are available for complex full-text searches.
+  \r\n\r\nCreated by Matthias Nehlsen\r\n"
+keywords: twitter,topics,birdwatch,centurylink
+type: Java
+documentation: |+
+  Birdwatch
+  ======
+
+  This template installs a Play framework with the Birdwatch code and the latest version of elasticsearch. Several steps must be completed for the application to be operational and accessible.
+
+  ##Port Forwarding
+  In order to view your wiki after running you will need to setup a port forwarding rule.  To view the GUI after launching the template, map your local host machine to port _9000_. If using Virtual Box, use the following command in your
+    terminal to create the port forwarding rule:
+
+  `VboxManage controlvm panamax-vm natpf1 birdwatch,tcp,,8997,,9000`
+
+  Where, birdwatch is the friendly name of the rule, tcp is the protocol. Replace port _8997_ with the local free port of your choice.
+
+  ## Environment Variables
+
+  The application must interact with the Twitter API so it requires valid tokens. There are four twitter specific tokens which must be replaced:
+
+  +  TWITTER_CONSUMER_KEY
+  +  TWITTER_CONSUMER_SECRET
+  +  TWITTER_ACCESS_KEY
+  +  TWITTER_SECRET
+
+  Creating an account and application on [Dev Twitter](https://dev.twitter.com/) to generate these values.
+
+  The other environment variables can be changed to the topics and user accounts you wish to monitor.
+
+  ## Checklist
+
+  + Expose port 9000 in your VM
+  + Update Environment variables with your twitter credentials
+  + Navigate to [http://localhost:9000](http://localhost:9000)
+
+images:
+- name: argvader_birdwatch_latest
+  source: argvader/birdwatch:latest
+  category: Application
+  type: Default
+  ports:
+  - host_port: '9000'
+    container_port: '9000'
+    proto: TCP
+  links:
+  - service: dockerfile_elasticsearch_1
+    alias: db
+  environment:
+  - variable: BIRDWATCH_TOPICS
+    value: docker,coreos,centurylink,clojure,clojurescript,panamax
+  - variable: TWITTER_USERS
+    value: '2384071,15358364'
+  - variable: TWITTER_CONSUMER_KEY
+    value: "[Replace with your consumer key]"
+  - variable: TWITTER_CONSUMER_SECRET
+    value: "[Replace with your consumer secret]"
+  - variable: TWITTER_ACCESS_KEY
+    value: "[Replace with your access key]"
+  - variable: TWITTER_SECRET
+    value: "[Replace with your access secret]"
+- name: dockerfile_elasticsearch_1
+  source: dockerfile/elasticsearch:latest
+  category: Index
+  type: Default
