@@ -12,7 +12,7 @@ documentation: |
 
   To view the GUI after launching the template, map your local host machine to port _8080_. If using Virtual Box, use the following command in your terminal to create the port forwarding rule:
 
-  `VboxManage controlvm panamax-vm natpf1 wordpress,tcp,,8997,,8080`
+  `VBoxManage controlvm panamax-vm natpf1 wordpress,tcp,,8997,,8080`
 
   Where, wordpress is the friendly name of the rule, tcp is the protocol. Replace port _8997_ with the local free port of your choice. If you change the port bindings on the Wordpress service, _8080_ will need to be changed to match that too.
 

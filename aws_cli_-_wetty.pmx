@@ -15,7 +15,7 @@ documentation: |
   ##Port Forwarding
   In order to view your application after running you will need to setup a port forwarding rule. To view the GUI after launching the template, map your local host machine to port _8088_. If using Virtual Box, use the following command in your terminal to create the port forwarding rule:
 
-  `VboxManage controlvm panamax-vm natpf1 rule1,tcp,,8997,,8088`
+  `VBoxManage controlvm panamax-vm natpf1 rule1,tcp,,8997,,8088`
 
   Where, rule is the friendly name of the rule, tcp is the protocol. Replace port _8997_ with the local free port of your choice. After you run this command locally, browse to **http://localhost:8997** to see the GUI, as per the example. 
 
