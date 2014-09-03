@@ -1,7 +1,7 @@
 ---
 name: Drupal 7.28 with PostgreSQL 9.3
 description: Drupal 7.28 with PostgreSQL 9.3
-keywords: drupal, postgres, postgresql, all
+keywords: drupal, postgres, postgresql, public
 recommended: 
 type: Drupal
 documentation: |

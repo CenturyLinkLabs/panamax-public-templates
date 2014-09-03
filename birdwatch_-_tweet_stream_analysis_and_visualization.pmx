@@ -4,7 +4,7 @@ description: "BirdWatch is an open-source reactive web application that consumes
   in a server side application that is based on Play Framework. The tweets are then
   stored inside ElasticSearch, where they are available for complex full-text searches.
   \r\n\r\nCreated by Matthias Nehlsen\r\n"
-keywords: twitter,topics,birdwatch,centurylink
+keywords: twitter, topics, birdwatch, public
 type: Java
 documentation: |+
   Birdwatch

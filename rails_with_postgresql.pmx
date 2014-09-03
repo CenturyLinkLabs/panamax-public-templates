@@ -1,7 +1,7 @@
 ---
 name: Rails with PostgreSQL
 description: Rails with PostgreSQL
-keywords: rails, postgresql, all
+keywords: rails, postgresql, public
 recommended:
 type: Rails
 documentation: |

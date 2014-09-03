@@ -7,7 +7,7 @@ description: "Runs Tiny Tiny RSS feed reader. Keep your feed history to yourself
   Tiny RSS is an open source web-based news feed (RSS/Atom) reader and aggregator,
   designed to allow you to read news from any location, while feeling as close to
   a real desktop application as possible.\r\n"
-keywords: ttrss, tiny, RSS, all
+keywords: ttrss, tiny, RSS, public
 type: Default
 documentation: "Tiny Tiny RSS - PostgreSQL\r\n==================\r\n\r\nExpose PORT
   in Localhost VirtualBox\r\n------\r\n\r\nMake sure to expose Port 8000 in Virtualbox

@@ -1,7 +1,7 @@
 ---
 name: GitLab Single node
 description: GitLab environment on a single container for testing based on image sameersbn/gitlab
-keywords: gitlab, mysql, nginx, all
+keywords: gitlab, mysql, nginx, public
 recommended: 
 type: Default
 documentation: |

@@ -1,7 +1,7 @@
 ---
 name: Drupal 7.28 with MySQL 5.5
 description: Drupal 7.28 with mysql 5.5
-keywords: drupal, mysql, all
+keywords: drupal, mysql, public
 recommended: 
 type: Drupal
 documentation: |

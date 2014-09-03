@@ -1,7 +1,7 @@
 
 name: buildpack-runner
 description: a template for running your GitHub repo code via Heroku buildpacks
-keywords: buildstep, heroku, buildpack, git, github, all
+keywords: buildstep, heroku, buildpack, git, github, public
 recommended: false
 type: Default
 documentation: |

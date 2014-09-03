@@ -2,7 +2,7 @@
 name: AWS CLI - wetty
 description: Amazon Web Services - CLI (Version 1.0.0) - using wetty Terminal in Chrome
   Browser
-keywords: AWS, AWSCLI, CLI, all
+keywords: AWS, AWSCLI, CLI, public
 type: Ubuntu
 documentation: |
   AWS CLI 1.0 - wetty terminal
