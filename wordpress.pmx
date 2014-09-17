@@ -17,21 +17,10 @@ documentation: |
   Where, wordpress is the friendly name of the rule, tcp is the protocol. Replace port _8997_ with the local free port of your choice. If you change the port bindings on the Wordpress service, _8080_ will need to be changed to match that too.
 
   After you run this command locally, browse to **http://localhost:8997** to see the GUI, as per the example.
-authors: 
+authors:
 - 'ctl-labs-futuretech@savvis.com'
 type: wordpress
 images:
-- name: DB
-  source: centurylink/mysql:5.5
-  description: MySQL
-  environment:
-    - variable: MYSQL_ROOT_PASSWORD
-      value: pass@word01
-  ports:
-  - host_port: 3306
-    container_port: 3306
-  category: DB Tier
-  type: mysql
 - name: WP
   source: centurylink/wordpress:3.9.1
   description: Wordpress
@@ -48,3 +37,14 @@ images:
     container_port: 80
   category: Web Tier
   type: wordpress
+- name: DB
+  source: centurylink/mysql:5.5
+  description: MySQL
+  environment:
+    - variable: MYSQL_ROOT_PASSWORD
+      value: pass@word01
+  ports:
+  - host_port: 3306
+    container_port: 3306
+  category: DB Tier
+  type: mysql
