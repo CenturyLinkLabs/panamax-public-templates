@@ -24,9 +24,16 @@ documentation: "Tiny Tiny RSS - PostgreSQL\r\n==================\r\n\r\nExpose P
   passing the following additional arguments:\r\n\r\n-e DB_ENV_USER=docker\r\n-e DB_ENV_PASS=docker\r\n"
 images:
 - name: PostgreSQL
-  source: nornagon/postgres:latest
+  source: centurylink/postgresql:9.3
   category: Database
   type: Default
+  environment:
+  - variable: DB
+    value: ttrss
+  - variable: PASS
+    value: ttrss
+  - variable: USER
+    value: ttrss
 - name: ttrss - NGIX,PHP
   source: clue/ttrss:latest
   category: Tiny RSS
