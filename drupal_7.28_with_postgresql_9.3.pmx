@@ -24,7 +24,7 @@ documentation: |
 images:
 - category: DB
   name: PostgreSQL
-  source: paintedfox/postgresql:latest
+  source: centurylink/postgresql:9.3
   description: 
   type: Default
   expose: []
