@@ -11,7 +11,7 @@ documentation: |
   the Markdown library used by Stack Overflow and the other Stack Exchange sites.
 
   When run within Panamax with default settings, the application should be
-  available in the browser at http://localhost:8080/
+  available in the browser at http://panamax.local:8080/
 images:
 - name: StackEdit
   source: centurylink/stackedit:3.1.14
