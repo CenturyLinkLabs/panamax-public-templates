@@ -10,8 +10,7 @@ description: "Runs Tiny Tiny RSS feed reader. Keep your feed history to yourself
 keywords: ttrss, tiny, RSS, public
 type: Default
 documentation: "Tiny Tiny RSS - PostgreSQL\r\n==================\r\n\r\nExpose PORT
-  in Localhost VirtualBox\r\n------\r\n\r\nMake sure to expose Port 8000 in Virtualbox
-  (or another port by changing the PORT in Service configuration page)\r\n\r\nLogin\r\n------\r\nThe
+  in Localhost VirtualBox\r\n------\r\n\r\nBrowse to http://panamax.local:8000 to view.\r\n\r\nLogin\r\n------\r\nThe
   default login credentials are:\r\n\r\nUsername: admin\r\nPassword: password\r\n\r\nDatabase
   configuration\r\n------\r\n\r\nWhenever your run ttrss, it will check your database
   setup. It assumes the following default configuration, which can be changed by passing
