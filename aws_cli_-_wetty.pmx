@@ -10,14 +10,7 @@ documentation: |
   Installs a [wetty terminal](https://github.com/krishnasrinivas/wetty) with [Amazon Web Services
   - CLI](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html).
   
-  Interact with AWS CLI via your browser terminal.
-
-  ##Port Forwarding
-  In order to view your application after running you will need to setup a port forwarding rule. To view the GUI after launching the template, map your local host machine to port _8088_. If using Virtual Box, use the following command in your terminal to create the port forwarding rule:
-
-  `VBoxManage controlvm panamax-vm natpf1 rule1,tcp,,8997,,8088`
-
-  Where, rule is the friendly name of the rule, tcp is the protocol. Replace port _8997_ with the local free port of your choice. After you run this command locally, browse to **http://localhost:8997** to see the GUI, as per the example. 
+  Interact with AWS CLI by browsing to http://panamax.local:8088
 
   Default username and password are:
 
