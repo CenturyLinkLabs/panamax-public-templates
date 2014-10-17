@@ -4,15 +4,8 @@ description: MediaWiki 1.21.2 with NGINX and MySQL
 keywords: MediaWiki, Wiki, public
 type: Default
 documentation: "MediaWiki 1.21.2 - NGINX, MySQL\n=======================\n\nThis installs
-  a fixed version of [MediaWiki](https://www.mediawiki.org/wiki/MediaWiki) 1.21.2\n\n##Port
-  Forwarding\nIn order to view your wiki after running you will need to setup a port
-  forwarding rule.  To view the GUI after launching the template, map your local host
-  machine to port _8088_. If using Virtual Box, use the following command in your
-  terminal to create the port forwarding rule:\n\n`VBoxManage controlvm panamax-vm
-  natpf1 gitlab,tcp,,8997,,8088`\n\n  Where, gitlab is the friendly name of the rule,
-  tcp is the protocol. Replace port _8997_ with the local free port of your choice.
-  \n\n  After you run this command locally, browse to **http://localhost:8997** to
-  see the GUI, as per the example.\n  \n##Template Configruation\nThe template sets
+  a fixed version of [MediaWiki](https://www.mediawiki.org/wiki/MediaWiki) 1.21.2\n\n In order to view your wiki after running, browse to http://panamax.local:8088. 
+  \n  \n##Template Configruation\nThe template sets
   the root password of the mysql database to \n\n**MediaWiki.123**\n\nYou will need
   to utilize this password when you run the MediaWiki configuration process.  (this
   can also be changed by changing the env variable: MYSQL_ROOT_PASSWORD in the mysql
