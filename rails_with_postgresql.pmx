@@ -8,14 +8,8 @@ documentation: |
   Rails with PostgreSQL
   =========
 
-  ##Port Forwarding
-  To view the GUI after launching the template, map your local host machine to port _8080_. If using Virtual Box, use the following command in your terminal to create the port forwarding rule:
-
-  `VBoxManage controlvm panamax-vm natpf1 rule1,tcp,,8997,,8080`
-
-  Where, rule1 is the friendly name of the rule, tcp is the protocol. Replace port _8997_ with the local free port of your choice.
-
-  After you run this command locally, browse to **http://localhost:8997** to see the GUI, as per the example.
+  To view the GUI after launching the template, browse to http://panamax.local:8080.
+  
 images:
 - category: DB Tier
   name: DB_1
