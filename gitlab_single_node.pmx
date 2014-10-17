@@ -11,14 +11,7 @@ documentation: |
   ##System requirements
   Recommend 2GB of RAM for your Host and 2 Cores for best performance
 
-  ##Port Forwarding
-  To view the GUI after launching the template, map your local host machine to port _10080_. If using Virtual Box, use the following command in your terminal to create the port forwarding rule:
-
-  `VBoxManage controlvm panamax-vm natpf1 gitlab,tcp,,8997,,10080`
-
-  Where, gitlab is the friendly name of the rule, tcp is the protocol. Replace port _8997_ with the local free port of your choice. 
-
-  After you run this command locally, browse to **http://localhost:8997** to see the GUI, as per the example.
+  To view the GUI after launching the template, browse to http://panamax.local:10080.
 
   ##Running
   __NOTE__: Please allow a few minutes for the GitLab service to start. Watch the journal output for the  message that it is complete.
