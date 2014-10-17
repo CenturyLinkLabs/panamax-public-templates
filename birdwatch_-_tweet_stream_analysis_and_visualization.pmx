@@ -12,14 +12,8 @@ documentation: |+
 
   This template installs a Play framework with the Birdwatch code and the latest version of elasticsearch. Several steps must be completed for the application to be operational and accessible.
 
-  ##Port Forwarding
-  In order to view your wiki after running you will need to setup a port forwarding rule.  To view the GUI after launching the template, map your local host machine to port _9000_. If using Virtual Box, use the following command in your
-    terminal to create the port forwarding rule:
-
-  `VboxManage controlvm panamax-vm natpf1 birdwatch,tcp,,8997,,9000`
-
-  Where, birdwatch is the friendly name of the rule, tcp is the protocol. Replace port _8997_ with the local free port of your choice.
-
+  In order to view your wiki after running, browse to http://panamax.local:9000 
+  
   ## Environment Variables
 
   The application must interact with the Twitter API so it requires valid tokens. There are four twitter specific tokens which must be replaced:
