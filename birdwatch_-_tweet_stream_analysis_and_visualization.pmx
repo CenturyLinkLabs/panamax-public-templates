@@ -62,3 +62,6 @@ images:
   source: dockerfile/elasticsearch:latest
   category: Index
   type: Default
+  expose:
+  - '9200'
+  - '9300'
