@@ -58,7 +58,7 @@ images:
     value: "[Replace with your access key]"
   - variable: TWITTER_SECRET
     value: "[Replace with your access secret]"
-- name: dockerfile_elasticsearch_1
+- name: elasticsearch
   source: dockerfile/elasticsearch:latest
   category: Index
   type: Default
