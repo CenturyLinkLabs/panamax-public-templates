@@ -34,7 +34,7 @@ documentation: |+
   + Navigate to [http://localhost:9000](http://localhost:9000)
 
 images:
-- name: argvader_birdwatch_latest
+- name: birdwatch
   source: argvader/birdwatch:latest
   category: Application
   type: Default
