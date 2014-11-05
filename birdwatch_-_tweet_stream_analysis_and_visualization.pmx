@@ -43,7 +43,7 @@ images:
     container_port: '9000'
     proto: TCP
   links:
-  - service: dockerfile_elasticsearch_1
+  - service: elasticsearch
     alias: db
   environment:
   - variable: BIRDWATCH_TOPICS
