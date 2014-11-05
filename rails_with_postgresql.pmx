@@ -12,7 +12,7 @@ documentation: |
   
 images:
 - category: DB Tier
-  name: DB_1
+  name: Database
   source: dharmamike/pmx-pgsql:latest
   description: PostgreSQL
   type: Default
@@ -33,7 +33,7 @@ images:
   - host_port: '8080'
     container_port: '3000'
   links:
-  - service: DB_1
+  - service: Database
     alias: DB_1
   environment: []
   volumes: []
