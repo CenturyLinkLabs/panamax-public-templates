@@ -60,6 +60,8 @@ images:
   source: centurylink/postgresql:9.3
   category: DB
   type: Default
+  expose:
+  - '5432'
   environment:
   - variable: DB
     value: gitlab
@@ -71,3 +73,5 @@ images:
   source: sameersbn/redis:latest
   category: DB
   type: Default
+  expose:
+  - '6379'
