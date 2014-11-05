@@ -22,7 +22,8 @@ images:
   source: centurylink/postgresql:9.3
   description: 
   type: Default
-  expose: []
+  expose:
+  - '5432'
   ports: []
   links: []
   environment:
