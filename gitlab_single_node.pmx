@@ -27,7 +27,10 @@ images:
   source: sameersbn/gitlab:7.1.1
   description: 
   type: Default
-  expose: []
+  expose:
+  - '22'
+  - '80'
+  - '443'
   ports:
   - host_port: '10022'
     container_port: '22'
