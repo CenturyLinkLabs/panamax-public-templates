@@ -30,7 +30,10 @@ documentation: |
 images:
 - name: AWS_CLI_wetty
   source: centurylink/aws-cli-wetty:latest
+  category: AWS_CLI
   type: Default
+  expose:
+  - '3000'
   ports:
   - host_port: '8088'
     container_port: '3000'
