@@ -40,6 +40,8 @@ images:
   source: centurylink/mysql:5.5
   category: Database
   type: Default
+  expose:
+  - '3306'
   environment:
   - variable: MYSQL_ROOT_PASSWORD
     value: MediaWiki.123
