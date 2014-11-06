@@ -17,6 +17,8 @@ images:
   source: centurylink/stackedit:3.1.14
   description: My StackEdit container
   type: Default
+  expose:
+  - '3000'
   ports:
   - host_port: '80'
     container_port: '3000'
