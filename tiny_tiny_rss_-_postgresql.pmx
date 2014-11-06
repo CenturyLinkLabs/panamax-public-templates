@@ -26,6 +26,8 @@ images:
   source: centurylink/postgresql:9.3
   category: Database
   type: Default
+  expose:
+  - '5432'
   environment:
   - variable: DB
     value: ttrss
@@ -37,6 +39,8 @@ images:
   source: clue/ttrss:latest
   category: Tiny RSS
   type: Default
+  expose:
+  - '80'
   ports:
   - host_port: '8000'
     container_port: '80'
