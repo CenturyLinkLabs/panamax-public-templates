@@ -21,10 +21,15 @@ images:
   - host_port: '81'
     container_port: '8083'
     proto: TCP
+  - host_port: '8084'
+    container_port: '8084'
+    proto: TCP
 - name: Elasticsearch
   source: tutum/elasticsearch
   category: Database
   type: Default
+  - host_port: '9200'
+    container_port: '9200'
   expose:
   - '9200'
 - name: Grafana
