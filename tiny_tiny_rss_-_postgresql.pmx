@@ -28,6 +28,9 @@ images:
   type: Default
   expose:
   - '5432'
+  ports:
+  - host_port: '5432'
+    container_port: '5432'
   environment:
   - variable: DB
     value: ttrss
