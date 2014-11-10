@@ -42,6 +42,9 @@ images:
   type: Default
   expose:
   - '3306'
+  ports:
+  - host_port: '3306'
+    container_port: '3306'
   environment:
   - variable: MYSQL_ROOT_PASSWORD
     value: MediaWiki.123
