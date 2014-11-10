@@ -63,6 +63,9 @@ images:
   type: Default
   expose:
   - '5432'
+  ports:
+  - host_port: '5432'
+    container_port: '5432'
   environment:
   - variable: DB
     value: gitlab
@@ -76,3 +79,6 @@ images:
   type: Default
   expose:
   - '6379'
+  ports:
+  - host_port: '6379'
+    container_port: '6379'
