@@ -24,7 +24,9 @@ images:
   type: Default
   expose:
   - '5432'
-  ports: []
+  ports:
+  - host_port: '5432'
+    container_port: '5432'
   links: []
   environment:
   - variable: USER
