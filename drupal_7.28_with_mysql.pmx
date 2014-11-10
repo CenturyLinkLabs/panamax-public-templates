@@ -24,7 +24,9 @@ images:
   type: Default
   expose:
   - '3306'
-  ports: []
+  ports:
+  - host_port: '3306'
+    container_port: '3306'
   links: []
   environment:
   - variable: MYSQL_ROOT_PASSWORD
