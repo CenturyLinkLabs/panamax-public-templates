@@ -28,6 +28,7 @@ images:
   source: tutum/elasticsearch
   category: Database
   type: Default
+  ports:
   - host_port: '9200'
     container_port: '9200'
   expose:
