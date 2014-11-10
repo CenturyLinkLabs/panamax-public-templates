@@ -36,6 +36,8 @@ images:
     container_port: '22'
   - host_port: '10080'
     container_port: '80'
+  - host_port: '443'
+    container_port: '443'
   links: []
   environment:
   - variable: GITLAB_PORT
