@@ -1,0 +1,61 @@
+name:  Wordpress and MySql w/ etcd enabled haproxy
+description: Wordpress container linked to a MySQL container, load balanced with an etcd enabled haproxy
+keywords: haproxy, wordpress, mysql, public, etcd
+recommended: true
+documentation: |
+  Wordpress with MySQL
+  ============================
+  This template can be used with etcd to allow load balancing of Wordpress but can also be used as a template for other web applications. Use it to deploy to your Fleet cluster using multiple counts of the Wordpress service. Then access the haproxy at 8081 to see the application.
+  
+  The alias for the link between Wordpress and MySQL needs to be _DB_1_. If this is changed, the template will not work.
+
+  Also, the password can be changed, but the environmental variables need to be changed on both services.
+
+  To view the GUI after launching the template go to http://10.0.0.200:8081 or http://panamax.local:8081 in a browser 
+
+authors:
+- 'ctl-labs-futuretech@savvis.com'
+type: wordpress
+images:
+- name: WP
+  source: centurylink/wordpress:3.9.1
+  description: Wordpress
+  environment:
+    - variable: DB_PASSWORD
+      value: pass@word01
+    - variable: DB_NAME
+      value: wordpress
+  links:
+  - service: DB
+    alias: DB_1
+  ports:
+  - host_port: 8080
+    container_port: 80
+  category: Web Tier
+  type: wordpress
+- name: DB
+  source: centurylink/mysql:5.5
+  description: MySQL
+  environment:
+    - variable: MYSQL_ROOT_PASSWORD
+      value: pass@word01
+  ports:
+  - host_port: 3306
+    container_port: 3306
+  category: DB Tier
+  type: mysql
+- name: HAP
+  source: centurylink/haproxy-etcd:0.1.0
+  description: HAProxy
+  environment:
+   - variable: PORT
+     value: 8080
+   - variable: APP
+     value: WP
+   - variable: ETCD_API
+     value: 172.17.42.1:4001
+  ports:
+   - host_port: 8081
+     container_port: 8080
+  category: Web Tier
+  type: wordpress
