@@ -1,5 +1,5 @@
-name:  Wordpress and MySql w/ etcd enabled haproxy
-description: Wordpress container linked to a MySQL container, load balanced with an etcd enabled haproxy
+name:  Wordpress and MySql w/ etcd enabled HAProxy
+description: Wordpress container linked to a MySQL container, load balanced with an etcd enabled HAProxy
 keywords: haproxy, wordpress, mysql, public, etcd
 recommended: true
 documentation: |
