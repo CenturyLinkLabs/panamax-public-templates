@@ -6,8 +6,8 @@ type: Default
 documentation: |-
   We recommend reading: http://www.centurylinklabs.com/tutorials/how-to-secure-your-private-docker-registry/
   
-  #Instructions#
-  ##Set the PUBLIC_IP_ADDR##
+#Instructions#
+##Set the PUBLIC_IP_ADDR##
   This can be a CNAME or public IP address of the server the registry will be running on.
 
   ##Generate the Basic auth credentials##
