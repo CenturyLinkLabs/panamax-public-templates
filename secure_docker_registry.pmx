@@ -12,21 +12,21 @@ documentation: |-
 
   ##Generate the Basic auth credentials
   Create a ```.htpasswd``` file to hold the authentication credentials. Save the file to be passed in as a volume in the template.
-  ```
-  $ htpasswd -c ~/my-registry.htpasswd USERNAME
-  $ # then enter password at prompt
+  ```\n
+  $ htpasswd -c ~/my-registry.htpasswd USERNAME\n
+  $ # then enter password at prompt\n
   ```
 
   ##Generate the self-signed SSL certificate
   Save the certs directory to be used in the volume mounts of the template as well.
-  ```
-  $ mkdir ~/certs
-  # the value for COMMAN_NAME should be updated to match the public CNAME or IP address of the server hosting the registry.
-  $ docker run --rm  -e COMMON_NAME=66.555.98.212 -e KEY_NAME=my-registry -v ~/certs:/certs centurylink/openssl
+  ```\n
+  $ mkdir ~/certs\n
+  # the value for COMMAN_NAME should be updated to match the public CNAME or IP address of the server hosting the registry.\n
+  $ docker run --rm  -e COMMON_NAME=66.555.98.212 -e KEY_NAME=my-registry -v ~/certs:/certs centurylink/openssl\n
 
-  # check that the container is running:
-  $ docker ps | grep registry
-  803c77e2f328        registry:latest                          "docker-registry"      19 minutes ago      Up 19 minutes       5000/tcp                                  			registry
+  # check that the container is running:\n
+  $ docker ps | grep registry\n
+  803c77e2f328        registry:latest                          "docker-registry"      19 minutes ago      Up 19 minutes       5000/tcp                                  			registry\n
   ```
 images:
 - name: registry_0.9.0
