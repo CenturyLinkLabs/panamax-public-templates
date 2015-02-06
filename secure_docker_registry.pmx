@@ -1,33 +1,30 @@
 ---
-name: secure Docker registry
+name: Secure Docker registry
 description: The Docker registry image fronted by an nginx SSL proxy container
 keywords: registry
 type: Default
 documentation: |-
-  We recommend reading: http://www.centurylinklabs.com/tutorials/how-to-secure-your-private-docker-registry/
-  
-  #Instructions#
-  ##Set the PUBLIC_IP_ADDR##
+  #### We recommend reading [The accompanying Post on our Blog](http://www.centurylinklabs.com/tutorials/how-to-secure-your-private-docker-registry)
+
+  ##Instructions
+
+  ###Set the PUBLIC_IP_ADDR on nginx-ssl-proxy container
+
   This can be a CNAME or public IP address of the server the registry will be running on.
 
-  ##Generate the Basic auth credentials##
-  Create a ```.htpasswd``` file to hold the authentication credentials. Save the file to be passed in as a volume in the template.
-  ```
-  $ htpasswd -c ~/my-registry.htpasswd USERNAME
-  $ # then enter password at prompt
-  ```
+  ###Generate the Basic auth credentials
 
-  ##Generate the self-signed SSL certificate##
-  Save the certs directory to be used in the volume mounts of the template as well.
-  ```
-  $ mkdir ~/certs\n
-  # the value for COMMAN_NAME should be updated to match the public CNAME or IP address of the server hosting the registry.\n
-  $ docker run --rm  -e COMMON_NAME=66.555.98.212 -e KEY_NAME=my-registry -v ~/certs:/certs centurylink/openssl\n
+  Create an `.htpasswd` file to hold the authentication credentials.
+  
+  You will need to volume mount the above file to `/etc/ssl/certs/docker-registry` on the nginx-ssl-proxy container.
 
-  # check that the container is running:
-  $ docker ps | grep registry
-  803c77e2f328        registry:latest                          "docker-registry"      19 minutes ago      Up 19 minutes       5000/tcp                                  			registry
-  ```
+
+  ###Supply the public SSL cert and private SSL key
+  
+  You will need to volume mount the private SSL key to `/etc/ssl/private/docker-registry` on the nginx-ssl-proxy container.
+  
+  You will need to volume mount the public SSL cert to `etc/ssl/certs/docker-registry` on the nginx-ssl-proxy container.
+  
 images:
 - name: registry_0.9.0
   source: registry:0.9.0
@@ -45,10 +42,3 @@ images:
   environment:
   - variable: PUBLIC_IP_ADDR
     value:
-  volumes:
-  - host_path: "./certs/my-registry.crt"
-    container_path: "/etc/ssl/certs/docker-registry"
-  - host_path: "./certs/my-registry.key"
-    container_path: "/etc/ssl/private/docker-registry"
-  - host_path: "./my-registry.htpasswd"
-    container_path: "/etc/nginx/docker-registry.htpasswd"
