@@ -44,7 +44,7 @@ images:
     alias: registry
   environment:
   - variable: PUBLIC_IP_ADDR
-    value: 66.555.98.212
+    value:
   volumes:
   - host_path: "./certs/my-registry.crt"
     container_path: "/etc/ssl/certs/docker-registry"
