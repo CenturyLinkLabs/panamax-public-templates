@@ -1,6 +1,6 @@
 
 name: Piwik
-description: a template for running Piwik open source analytics platform
+description: A template for running Piwik open source analytics platform
 keywords: piwik, analytics, public
 recommended: false
 type: Default
@@ -8,23 +8,25 @@ documentation: |
   Piwik
   =====
   This template creates a multi-container application consisting of a container
-  running cbeer/piwik linked to an instance of panamax/panamax-docker-mysql.
+  running cbeer/piwik linked to an instance of centurylink/mysql.
 
-  Upon accessing the Piwik web application the first time, you will be prompted
-  to enter the MySQL user and password.  By default, the MySQL image is run with
-  the root user password set to pass@word01.
+  Upon accessing the Piwik web application **(http://panamax.local:8088)** the first time, you will be prompted with a wizard.
 
-  Additionally, you will be prompted to enter the location of the MySQL server.
-  The IP address of the server can be found by inspecting the Docker container
-   details with Docker inspect in panamax ssh.
+  **Database Server: db** (value is the Alias string from the link to MySQL)
+  
+  **UN: root**
+  
+  **PW: pass@word01**
+
+  **DB Name: <any_value>**
 images:
 - category: Web Tier
   name: Piwik
-  source: cbeer/piwik
+  source: cbeer/piwik:latest
   description: Piwik web application
   type: Default
   ports:
-  - host_port: 80
+  - host_port: 8088
     container_port: 80
   links:
   - service: DB
