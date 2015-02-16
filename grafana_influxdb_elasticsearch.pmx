@@ -1,0 +1,71 @@
+---
+name: Grafana-InfluxDB-ElasticSearch
+description: Grafana with InfluxDB and ElasticSearch
+keywords: grafana, influxdb, elasticsearch
+type: Default
+documentation: |
+  # Grafana Application that uses InfluxDB and ElasticSearch
+  
+  * The Grafana we interface can be accessed at panamax.local:8080. Use 'admin/admin' for credentials.
+  * The InfluxDB web interface can be accessed at panamax.local:81. Use 'root/root' for credentials and use the default 'rgdata' database to enter data.
+
+images:
+- name: InfluxDB
+  source: tutum/influxdb
+  category: Database
+  type: Default
+  expose:
+  - '8083'
+  - '8084'
+  - '8086'
+  ports:
+  - host_port: '8086'
+    container_port: '8086'
+    proto: TCP
+  - host_port: '81'
+    container_port: '8083'
+    proto: TCP
+  - host_port: '8084'
+    container_port: '8084'
+    proto: TCP
+  environment:
+  - variable: PRE_CREATE_DB
+    value: rgdata
+- name: Elasticsearch
+  source: tutum/elasticsearch
+  category: Database
+  type: Default
+  expose:
+  - '9200'
+  ports:
+  - host_port: '9200'
+    container_port: '9200'
+- name: Grafana
+  source: tutum/grafana
+  type: Default
+  expose:
+  - '80'
+  ports:
+  - host_port: '8080'
+    container_port: '80'
+    proto: TCP
+  links:
+  - service: InfluxDB
+    alias: INFLUXDB
+  - service: Elasticsearch
+    alias: ELASTICSEARCH
+  environment:
+  - variable: HTTP_USER
+    value: admin
+  - variable: HTTP_PASS
+    value: admin
+  - variable: INFLUXDB_NAME
+    value: rgdata
+  - variable: INFLUXDB_USER
+    value: root
+  - variable: INFLUXDB_PASS
+    value: root
+  - variable: INFLUXDB_HOST
+    value: 127.0.0.1
+  - variable: ELASTICSEARCH_HOST
+    value: 127.0.0.1
