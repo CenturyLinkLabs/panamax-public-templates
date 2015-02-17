@@ -1,13 +1,23 @@
 
 name: buildpack-runner
-description: a template for running your GitHub repo code via Heroku buildpacks
+description: A template for running your GitHub repo code via Heroku buildpacks!
 keywords: buildstep, heroku, buildpack, git, github, public
 recommended: false
 type: Default
 documentation: |
   CenturyLinkLabs/buildpack-runner
   ============================
-  It's your GitHub repo code running in-container via Panamax.
+  Pass an environment variable `GIT_REPO` with your application's git repository URL.
+
+  If your repository has a `Procfile` (or the buildpack you are using has a default `Procfile`),
+  you can specify the process type name as the run command.
+  Otherwise, you can specify the actual command used to launch your application as the run command. For example:
+
+	# Without a Procfile
+	docker run -d -p 80 -e GIT_REPO=https://github.com/fermayo/hello-world-django.git CenturyLink/buildpack-runner python manage.py runserver 80
+
+	# With a Procfile (or relying on the default Procfile provided by the buildpack)
+	docker run -d -p 80 -e GIT_REPO=https://github.com/fermayo/hello-world-php.git CenturyLink/buildpack-runner /start web
 images:
 - category: Web Tier
   name: MyWebApp
