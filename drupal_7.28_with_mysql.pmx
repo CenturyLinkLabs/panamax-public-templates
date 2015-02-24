@@ -1,11 +1,11 @@
 ---
-name: Drupal 7.28 with MySQL 5.5
-description: Drupal 7.28 with mysql 5.5
+name: Drupal 7.34 with MySQL 5.5
+description: Drupal 7.34 with mysql 5.5
 keywords: drupal, mysql, public
 recommended: 
 type: Drupal
 documentation: |
-  Drupal 7.28 with MySQL
+  Drupal 7.34 with MySQL
   =========
   
   ##Instructions
@@ -40,7 +40,7 @@ images:
   volumes: []
 - category: Web Tier
   name: Drupal 7.28
-  source: centurylink/drupal:7.28
+  source: centurylink/drupal:7.34
   description: 
   type: Default
   expose:
