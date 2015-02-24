@@ -1,11 +1,11 @@
 ---
-name: Drupal 7.28 with PostgreSQL 9.3
-description: Drupal 7.28 with PostgreSQL 9.3
+name: Drupal 7.34 with PostgreSQL 9.3
+description: Drupal 7.34 with PostgreSQL 9.3
 keywords: drupal, postgres, postgresql, public
 recommended: 
 type: Drupal
 documentation: |
-  Drupal 7.28 with PostgreSQL 9.3
+  Drupal 7.34 with PostgreSQL 9.3
   =========
   
   ##Instructions
@@ -38,7 +38,7 @@ images:
   volumes: []
 - category: Web
   name: Drupal_7.28
-  source: centurylink/drupal:7.28
+  source: centurylink/drupal:7.34
   description: 
   type: Default
   expose:
