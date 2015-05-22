@@ -39,7 +39,7 @@ images:
     value: pass@word01
   volumes: []
 - category: Web Tier
-  name: Drupal 7.28
+  name: Drupal728
   source: centurylink/drupal:7.34
   description: 
   type: Default
