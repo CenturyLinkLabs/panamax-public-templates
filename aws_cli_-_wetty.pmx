@@ -28,7 +28,7 @@ documentation: |
   in your wetty terminal.
 
 images:
-- name: AWS_CLI_wetty
+- name: AWSCLIwetty
   source: centurylink/aws-cli-wetty:latest
   category: AWS_CLI
   type: Default
