@@ -38,7 +38,7 @@ images:
     value: ttrss
   - variable: USER
     value: ttrss
-- name: ttrss - NGIX,PHP
+- name: ttrss
   source: clue/ttrss:latest
   category: Tiny RSS
   type: Default
