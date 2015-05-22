@@ -11,7 +11,7 @@ documentation: "OpenStack CLIs with wetty\n=======================\nInstalls a [
   section.\n In order to view your application after running, browse to http://panamax.local:8000.
    \nDefault username and password are:\n\nUsername:**term**\n\nPassword:**term**\n"
 images:
-- name: OpenStack CLIs
+- name: OpenStackCLIs
   source: centurylink/openstack-cli-wetty:latest
   category: CLIs
   type: Default
