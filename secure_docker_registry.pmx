@@ -26,10 +26,10 @@ documentation: |-
   You will need to volume mount the public SSL cert to `etc/ssl/certs/docker-registry` on the nginx-ssl-proxy container.
   
 images:
-- name: registry_0.9.0
+- name: registry090
   source: registry:0.9.0
   type: Default
-- name: centurylinklabs_nginx-ssl-proxy
+- name: centurylinklabsnginxsslproxy
   source: centurylinklabs/nginx-ssl-proxy:latest
   type: Default
   ports:
