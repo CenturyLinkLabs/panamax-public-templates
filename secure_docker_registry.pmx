@@ -4,7 +4,7 @@ description: The Docker registry image fronted by an nginx SSL proxy container
 keywords: registry
 type: Default
 documentation: |-
-  #### We recommend reading [The accompanying Post on our Blog](http://www.centurylinklabs.com/tutorials/how-to-secure-your-private-docker-registry)
+  #### We recommend reading [The accompanying Post on our Blog](https://labs.ctl.io/tutorials/how-to-secure-your-private-docker-registry)
 
   ##Instructions
 
