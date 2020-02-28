@@ -2,7 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     panamax_template_validator (0.0.2)
-    rake (10.3.2)
+    rake (12.3.3)
 
 PLATFORMS
   ruby
